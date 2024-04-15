@@ -1,3 +1,14 @@
+let projectContainer = document.querySelector(".projectContainer");
+let imageURLFromLocalStorage = localStorage.getItem("imageURL");
+
+if (imageURLFromLocalStorage) {
+    projectContainer.innerHTML += `<div class='redSquare'><img src='${imageURLFromLocalStorage}'></div>`
+}
+
 function change() {
-    // add red squares to the HTML when the button is clicked
+    let imageURLFromInput = document.querySelector(".form-image").value;
+    console.log(imageURLFromInput);
+    localStorage.setItem("imageURL", imageURLFromInput);
+    
+    projectContainer.innerHTML += `<div class='redSquare'><img src='${imageURLFromLocalStorage}'></div>`
 }
